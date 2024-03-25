@@ -59,3 +59,33 @@ const report = olderFriends.map(friend => friend.initials + ': ' + friend.age);
 // Output report to console
 console.log(report); // Expected output: [ 'AB: 35', 'SW: 45', 'AE: 38', 'IH: 46' ]
 ```
+
+
+# Array Reduce
+
+1. Array Reduce:
+    * Helps in reducing an array to a single value
+    * Useful for operations like finding a mathematical sum or determining the longest word in an array
+
+2. Usage Summary:
+    * __'reduce()'__ takes two parameters: a callback function and an optional initialValue
+    * It's recommended to always include an initialValue to ensure consistent results
+
+3. Different Approaches:
+    * Define a seperate function for the callback, making it reusable across multiple cases
+    * Define the callback inline when calling __'reduce()__
+    * Enclose the __'reduce()'__ operation within a wrapper function for simplicity and reusability
+
+4. Callback Function Breakdown:
+    * Callback function can take up to four arguments: accumulator, currentValue, index, and array
+    * The first iteration uses initialValue as the accumulator; subsequent iterations use the calculated value from the previous iteration
+    * Always provide an initialValue to prevent errors, especially with empty arrays
+
+5. Common Error:
+    * Calling __'reduce()'__ on an empty array without an initialValue leads to a TypeError
+    * This error occurs because the accumulator defaults to undefined without an initialValue, causing calculations to fail
+
+6. Key Takeaways:
+    * __'reduce()'__ requires a callback function and optionally an initialValue
+    * Set initialValue to avoid potential errors, ensuring consistent behaviour
+    * Callback function performs cumulative calculations, returning the overall result
